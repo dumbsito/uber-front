@@ -11,7 +11,8 @@ import { MapService } from './services/map.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-
+  listSubscribers:any=[];
+  fields:boolean=false;
   @ViewChild("asGeoCoder") asGeoCoder:ElementRef;
    wayPoints:WayPoints={start:null,end:null}
    modeInput="start";
@@ -48,13 +49,20 @@ this.servi.construirMapa()
 }
 
  dibujarRuta(){
+ if(this.wayPoints.start==null || this.wayPoints.end==null){
+  this.fields=true;
+  setTimeout(() => {
+    this.fields=false;
+  }, 3000);
+ }else{
+  this.fields=false;
    const coords=[
     this.wayPoints.start.center,
     this.wayPoints.end.center
    ];
-
- this.servi.cargarCordenadas(coords);
-
+ 
+ const subscription=this.servi.cargarCordenadas(coords);
+  }
  }
 
 changeMode(mode:string) {
@@ -65,7 +73,13 @@ this.modeInput=mode
         this.servi.agregarMarcador([-58.43229664613971, -34.58343551763664]);
       } 
 
-}
+
+      reset(){
+      this.wayPoints.end="";
+      this.wayPoints.start="";
+         console.log(this.wayPoints);
+      }
+    }
 
 export class WayPoints{
   start:any;

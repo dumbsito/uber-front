@@ -1,14 +1,25 @@
 
 <h1 class="titulo">Uber Directions</h1>
 <div class="wrapper">
-  <button (click)="dibujarRuta()" class="btn-route draw-btn">Draw route</button>
-  <button (click)="testMarker()" class="btn-route marker-btn">Marker</button>
-</div>
+  <form>  
+    <button id="restart" class=" btn-route">Restart</button>
+  </form>
+  <button id="draw" (click)="dibujarRuta()" class=" btn-route draw-btn">Draw route</button>
 
+  <button id="marker" (click)="testMarker()" class="btn-route marker-btn">Marker</button>
+</div>
+<div *ngIf="fields" class="fields">
+  
+  <h2>Complete the fields!</h2>
+</div>
 <div class="wrapper">
+ 
   <div class="box-inputs">
-    <div>
+
+    <div class="con">
+
       <div id="geocoder" #asGeoCoder class="geocoder"></div>
+
     </div>
 
     <div (click)="changeMode('start')" [ngClass]="{'active-way':modeInput==='start'}">
@@ -25,7 +36,18 @@
 </div>
 
 <div class="wrapper">
+  
   <div id="map" #map class="map-container">
 
   </div>
+  <div class="iconos">
+<div class="suma">
+  +
 </div>
+<div class="resta">
+  -
+</div>
+<img src="/assets/star.png" class="star" alt="">
+</div>
+</div>
+<app-footer></app-footer>

@@ -3,10 +3,22 @@ html, body {
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
   }
-  
+  #draw{
+   border: 2px solid rgb(169, 223, 88);
+   background-color: rgb(162, 226, 67);;
+  }
+
+  #restart{
+    border: 2px solid rgb(224, 104, 104);
+    background-color:rgb(235, 92, 92);
+  }
+  #marker{
+border: 2px solid rgb(136, 136, 219);
+background-color: rgb(121, 121, 207);
+  }
   .map-container {
-    width: 60%;
-    height: 500px;
+    width: 55%;
+    height: 450px;
     border-radius: 1rem;
     border: solid 10px white;
     box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -50,25 +62,43 @@ html, body {
   .geocoder {
     margin-bottom: .5rem;
   }
-  
-  .geocoder, .mapboxgl-ctrl {
+  .mapboxgl-ctrl-group{
+
+
+  }
+  .geocoder, .mapboxgl-ctrl-geocoder {
+    z-index: 100;
     width: 100%;
     max-width: 100%;
     border-radius: 0;
     background-color: white;
   }
-  
+  .con{
+    display: flex;
+
+    button{
+      margin-left: 5px;
+      width: 13%;
+      height: 2.3rem;
+      background-color: white;
+    
+      border: solid 2px gray;
+      cursor: pointer;
+    }
+  }
   .active-way {
     border: solid 2px #09c509;
     box-shadow: 0 0 10px #09c5094a;
   }
   
   .btn-route {
-    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
     padding: .5rem 1rem;
-    border: solid 2px gray;
+border-radius: 4px;
     width: 8rem;
     cursor: pointer;
+    margin-left: 50px;
   }
   
   .wrapper{
@@ -83,4 +113,16 @@ html, body {
     font-size: 50px;
     margin-top: 40px;
     text-align: center;
+  }
+
+  .fields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid black;
+    width: 320px;
+    padding: 5px;
+    border-radius: 7px;
+    height: 50px;
+    margin: 10px auto;
   }

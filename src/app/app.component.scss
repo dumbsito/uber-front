@@ -1,0 +1,27 @@
+.suma,.resta,.star{
+    width: 1rem;
+    
+    
+
+    
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+  
+}
+.iconos{
+    pointer-events: none;
+   position: relative;
+   top: 20px;
+   z-index:9999;
+   right: 40px;
+}
+.resta{
+    margin-left: 2px;
+    margin-top: 5px;
+}
+.star{
+    margin-left: -6px;
+    margin-top: 9px;
+    width: 24px;
+}

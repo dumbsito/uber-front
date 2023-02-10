@@ -33,11 +33,12 @@ try{
     container:"map",
     style:this.style,
     zoom:this.zoom,
-    center:[this.long,this.lat]
+    center:[this.long,this.lat],
+    
   });
-
-  this.map.addControl(new mapboxgl.NavigationControl())
-
+const navigation=new mapboxgl.NavigationControl()
+  this.map.addControl(navigation)
+ 
   const geocoder=new MapboxGeocoder({
     accessToken:mapboxgl.accessToken,
     mapboxgl
