@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import {SocketIoConfig,SocketIoModule} from "ngx-socket-io";
 import { FooterComponent } from './footer/footer.component'
 
-const config:SocketIoConfig={url:"http://localhost:3000",options:{}}
+const config:SocketIoConfig={url:"https://uber-directions.onrender.com",options:{}}
 @NgModule({
   declarations: [
     AppComponent,

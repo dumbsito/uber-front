@@ -20,10 +20,12 @@
     "@angular/router": "^15.0.0",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@types/mapbox__mapbox-gl-geocoder": "^4.7.3",
+    "@types/socket.io-client": "^3.0.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.12.0",
     "ngx-socket-io": "^4.4.0",
     "rxjs": "~7.5.0",
+    "socket.io-client": "^4.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

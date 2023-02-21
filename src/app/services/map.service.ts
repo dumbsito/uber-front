@@ -24,6 +24,7 @@ export class MapService {
 
   constructor(private http:HttpClient,private socket:Socket) {
 this.mapbox.accessToken=environment.mapPk;
+
    }
 
    construirMapa(){

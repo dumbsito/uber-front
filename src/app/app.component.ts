@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { MapService } from './services/map.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,10 +17,12 @@ export class AppComponent implements OnInit{
   @ViewChild("asGeoCoder") asGeoCoder:ElementRef;
    wayPoints:WayPoints={start:null,end:null}
    modeInput="start";
-  constructor(private servi:MapService,private rendered2:Renderer2,private socket:Socket){
+  constructor(private servi:MapService, private rendered2:Renderer2,private socket:Socket){
 
   }
   ngOnInit(): void {
+  
+    
 this.servi.construirMapa()
 .then(({geocoder,map})=>{
   this.rendered2.appendChild(this.asGeoCoder.nativeElement,
